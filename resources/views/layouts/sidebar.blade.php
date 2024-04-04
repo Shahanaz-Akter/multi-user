@@ -5,7 +5,7 @@
     <div class="menu-inner-shadow"></div>
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
-
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Dashboard</span></li>
         <li class="menu-item">
             <a href="{{url('/dashboard')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
@@ -13,11 +13,39 @@
             </a>
         </li>
 
-
-
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Product</span></li>
+        <li class="menu-item">
+            <a href="{{url('/add_product')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div>Add Product</div>
+            </a>
+        </li>
 
-        <li id="p1" class="menu-item">
+        <li class="menu-item">
+            <a href="{{url('/product_list')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div>Product List</div>
+            </a>
+        </li>
+
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Order</span></li>
+        <li class="menu-item">
+            <a href="{{url('/add_order')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div>Add Order</div>
+            </a>
+        </li>
+
+
+        <li class="menu-item">
+            <a href="{{url('/order_list')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div>Order List</div>
+            </a>
+        </li>
+
+       
+        <li id="p1" class="menu-item d-none">
             <a href="" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div>Product</div>
@@ -32,7 +60,7 @@
                         <i class="fa-solid fa-circle-plus hide"></i>
                     </a>
                 </li> -->
-                <li id="add_product" class="menu-item new_customer" style="position: relative;">
+                <li id="item" class="menu-item new_customer" style="position: relative;">
                     <a href="{{url('/add_product')}}" class="menu-link" on="items()">
                         <div>Add Product</div>
                     </a>
@@ -40,72 +68,74 @@
                         <i class="fa-solid fa-circle-plus hide"></i>
                     </a>
                 </li>
-                <li id="product_list" class="menu-item menu_icon new_customer" style="position: relative;">
+                
+                <li id="group" class="menu-item menu_icon new_customer" style="position: relative;">
                     <a href="{{url('/product_list')}}" class="menu-link">
-                        <div data-i18n="product_list">Product List
+                        <div>Product List
                             <i id="icon" style="font-size: 15px; visibility: hidden;" class="fas fa-circle-plus fa-xl fa-fw"></i>
                         </div>
                     </a>
                     <a style="position: absolute; top: 10px; bottom: 20px; left: 200px;" href="{{url('/product_list')}}">
                         <i class="fa-solid fa-circle-plus hide"></i>
                     </a>
-                </li>               
+                </li>
+
+             
+
+               
             </ul>
         </li>
-
-
-
-
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Order</span></li>
-
-        <li id="p2" class="menu-item">
+        <li class="d-none menu-header small text-uppercase"><span class="menu-header-text">Sales</span></li>
+        <li id="p2" class="menu-item d-none">
             <a href="" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="order">Order</div>
+                <div data-i18n="Sales">Sales</div>
             </a>
 
             <ul class="menu-sub">
                 <li id="customer" class="menu-item new_customer" style="position: relative;">
-                    <a href="{{url('/add_order')}}" class="menu-link">
-                        <span data-i18n="Customers">Add Order</span>
+                    <a href="{{url('/customers')}}" class="menu-link">
+                        <span data-i18n="Customers">Customers</span>
                     </a>
 
-                    <a style="position: absolute; top: 10px; bottom: 20px; left: 200px;" href="{{url('/add_order')}}">
+                    <a style="position: absolute; top: 10px; bottom: 20px; left: 200px;" href="{{url('/new_customer')}}">
                         <i class="fa-solid fa-circle-plus hide"></i>
                     </a>
 
                 </li>
 
                 <li id="sales_order" class="menu-item new_customer" style="position: relative;">
-                    <a href="{{url('/order_list')}}" class="menu-link">
-                        <span data-i18n="Sales Order">Order List</span>
+                    <a href="{{url('/sales_order')}}" class="menu-link">
+                        <span data-i18n="Sales Order">Sales Order</span>
                     </a>
 
-                    <a style="position: absolute; top: 10px; bottom: 20px; left: 200px;" href="{{url('/order_list')}}">
+                    <a style="position: absolute; top: 10px; bottom: 20px; left: 200px;" href="{{url('/new_sales_order')}}">
                         <i class="fa-solid fa-circle-plus hide"></i>
                     </a>
 
                 </li>
 
-              
-              
+                <li id="package" class="menu-item new_customer" style="position: relative;">
+                    <a href="{{url('/packages')}}" class="menu-link">
+                        <div data-i18n="Packages">Packages</div>
+                    </a>
+                    <a style="position: absolute; top: 10px; bottom: 20px; left: 200px;" href="{{url('/new_package')}}">
+                        <i class="fa-solid fa-circle-plus hide"></i>
+                    </a>
+                </li>
 
+                <li id="shipment" class="menu-item new_customer" style="position: relative;">
+                    <a href="{{url('/shipments')}}" class="menu-link">
+                        <div data-i18n="Shipments">Shipments</div>
+                    </a>
+                    <a style="position: absolute; top: 10px; bottom: 20px; left: 200px;" href="{{url('/new_shipment')}}">
+                        <i class="fa-solid fa-circle-plus hide"></i>
+                    </a>
+                </li>
 
-        <li class="menu-item">
-            <a href="{{url('/reports')}}" class="menu-link ">
-                <i class="menu-icon tf-icons bx bx-user"></i>
-                <div data-i18n="Reports">Reports</div>
-            </a>
-        </li>
+                
 
-
-
-        <li class="menu-item">
-            <a href="{{url('/documents')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-user"></i>
-                <div data-i18n="Documents">Documents</div>
-            </a>
-        </li>
+               
     </ul>
 </aside>
 <!-- / Menu -->

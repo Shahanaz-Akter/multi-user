@@ -3,5 +3,5 @@
 <title>Dashboard</title>
 @endsection
 @section('content')
-<h4>Dashboard will be placed here!</h4>
+<h4>Dashboard Page!</h4>
 @endsection
