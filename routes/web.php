@@ -38,7 +38,7 @@ Route::post('/post_signup', [UserController::class, 'postSignUp']);
 
 // admin can access only admin routes
 // 
-Route::group(['middleware' => ['auth', 'role:admin']], function () { //role=admin
+Route::group(['middleware' => ['role:admin']], function () { //role=admin
     // All Admin routes
     Route::get('/dashboard', function () {
         return view('layouts.dashboard');
@@ -46,27 +46,23 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () { //role=admi
     Route::get('/add_product', function () {
         return view('admin.add_product');
     });
-    Route::post('/post_product', [ProductController::class, 'postProduct'] );
-    Route::get('/delete_product/{product_id}', [ProductController::class, 'deleteProduct'] );
-    Route::get('/edit_product/{product_id}', [ProductController::class, 'editProduct'] );
-    Route::post('/post_edit_product/{product_id}', [ProductController::class, 'postEditProduct'] );
+    Route::post('/post_product', [ProductController::class, 'postProduct']);
+    Route::get('/delete_product/{product_id}', [ProductController::class, 'deleteProduct']);
+    Route::get('/edit_product/{product_id}', [ProductController::class, 'editProduct']);
+    Route::post('/post_edit_product/{product_id}', [ProductController::class, 'postEditProduct']);
     Route::get('/productlist', function () {
         return view('admin.product_list');
     });
     Route::get('/orderlist', function () {
         $orders = App\Models\Order::all();
-        return view('admin.order_list')->with('orders',$orders);
+        return view('admin.order_list')->with('orders', $orders);
     });
-    Route::get('/changeStatus/{required_status}/{order_id}',[OrderController::class, 'changeStatus']);
+    Route::get('/changeStatus/{required_status}/{order_id}', [OrderController::class, 'changeStatus']);
 });
-
-
-
-
 
 // for customer
 // customer can access only customer routes
-Route::group(['middleware' => ['auth', 'role:customer']], function () {
+Route::group(['middleware' => ['role:customer']], function () {
     Route::get('/customer_productlist', function () {
         return view('customer.productlist');
     });
@@ -75,7 +71,7 @@ Route::group(['middleware' => ['auth', 'role:customer']], function () {
 });
 
 
-Route::get('/logout', function(){
+Route::get('/logout', function () {
     Auth::logout();
     return redirect('/');
 });

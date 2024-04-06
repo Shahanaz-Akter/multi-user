@@ -29,17 +29,13 @@
 			<div class="row justify-content-center">
 				<div class="col-12 col-md-6 col-lg-5">
 					<div class="login-wrap p-3 p-md-3">
-						<div class="text-center mb-1">Are You Already Loogedin? <a href="/login"><b class="text-dark">Login</b></a></div>
+						<div class="text-center mb-1">Are You Already Looged in? <a href="/login"><b class="text-dark">Login</b></a></div>
 						<div class="icon d-flex align-items-center justify-content-center">
 							<span class="fa fa-user-o"></span>
 						</div>
 						<h3 class="text-center mb-1" style="color: black;">Signup Page</h3>
 						<form action="{{url('/post_signup')}}" class="login-form" method="post">
 							@csrf
-
-							@error('name')
-								<div class="alert alert-danger">{{ $message }}</div>
-							@enderror
 
 							<div class="form-group">
 								<label class="form-label" style="color: ;">Name</label>
