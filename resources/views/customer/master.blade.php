@@ -226,12 +226,12 @@
   <div class="layout-wrap1er layout-content-navbar">
     <div class="layout-container">
       <!-- Menu -->
-      @include('layouts.sidebar')
+      @include('customer.customer_sidebar')
       <!-- / Menu -->
       <!-- Layout container -->
       <div class="layout-page">
         <!-- Navbar -->
-        @include('layouts.header')
+        @include('customer.header')
         <!-- / Navbar -->
         <!-- Content wrap1er -->
         <div class="content-wrap1er">

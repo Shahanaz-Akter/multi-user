@@ -5,40 +5,20 @@
     <div class="menu-inner-shadow"></div>
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Dashboard</span></li>
-        <li class="menu-item">
-            <a href="{{url('/dashboard')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Dashboard">Dashboard</div>
-            </a>
-        </li>
+       
+       
 
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Product</span></li>
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Routes</span></li>
         <li class="menu-item">
-            <a href="{{url('/add_product')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div>Add Product</div>
-            </a>
-        </li>
-
-        <li class="menu-item">
-            <a href="{{url('/productlist')}}" class="menu-link">
+            <a href="{{url('/customer_productlist')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div>Product List</div>
             </a>
         </li>
 
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Order</span></li>
-        <li class="menu-item">
-            <a href="{{url('/add_order')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div>Add Order</div>
-            </a>
-        </li>
-
 
         <li class="menu-item">
-            <a href="{{url('/orderlist')}}" class="menu-link">
+            <a href="{{url('/customer_order_history')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div>Order List</div>
             </a>

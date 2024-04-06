@@ -37,27 +37,43 @@
 						<form action="{{url('/post_signup')}}" class="login-form" method="post">
 							@csrf
 
+							@error('name')
+								<div class="alert alert-danger">{{ $message }}</div>
+							@enderror
+
 							<div class="form-group">
 								<label class="form-label" style="color: ;">Name</label>
 								<input type="text" class="form-control rounded-left" placeholder="John Doe" name="name">
 							</div>
+
+							@error('email')
+								<div class="alert alert-danger">{{ $message }}</div>
+							@enderror
 
 							<div class="form-group">
 								<label class="form-label" style="color: ;">Email</label>
 								<input type="email" class="form-control rounded-left" placeholder="john@gmail.com" name="email" required>
 							</div>
 
+							@error('password')
+								<div class="alert alert-danger">{{ $message }}</div>
+							@enderror
+
 							<div class="form-group">
 							<label class="form-label">Password</label>
-								<input type="password" class="form-control rounded-left" placeholder="Enter Password" name="email" required>
+								<input type="password" class="form-control rounded-left" placeholder="Enter Password" name="password" required>
 							</div>
 
 							
-							
+							@error('role')
+								<div class="alert alert-danger">{{ $message }}</div>
+							@enderror
+
 							<div class="form-group">
 								<label class="form-label" style="color: ;">Role</label>
 								<input type="text" class="form-control rounded-left" placeholder="Admin or any user" name="role">
 							</div>
+
 							<div class="form-group">
 								<button type="submit" class="btn btn-primary rounded submit p-3 px-5">Signup</button>
 							</div>
