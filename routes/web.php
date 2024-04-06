@@ -17,21 +17,22 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-
-
 // for kogin and singup
 Route::get('/', function () {
     return view('auth.login');
 });
+Route::get('/signup', function () {
+    return view('auth.signup');
+});
+Route::post('/post_signup', [UserController::class, 'postSignup']);
+
 Route::get('/login', function () {
     return view('auth.login');
 });
 Route::post('/post_login', [UserController::class, 'postLogin']);
 
-Route::get('/signup', function () {
-    return view('auth.signup');
-});
-Route::post('/post_signup', [UserController::class, 'postSignUp']);
+
+
 
 
 // for admin

@@ -25,11 +25,11 @@
 <body>
 	<section class="ftco-section">
 		<div class="container">
-			
+
 			<div class="row justify-content-center">
 				<div class="col-12 col-md-6 col-lg-5">
 					<div class="login-wrap p-3 p-md-3">
-						<div class="text-center mb-1">Are You Already Looged in? <a href="/login"><b class="text-dark">Login</b></a></div>
+						<div class="text-center mb-1">Are You Already Logged in? <a href="/login"><b class="text-dark">Login</b></a></div>
 						<div class="icon d-flex align-items-center justify-content-center">
 							<span class="fa fa-user-o"></span>
 						</div>
@@ -37,37 +37,44 @@
 						<form action="{{url('/post_signup')}}" class="login-form" method="post">
 							@csrf
 
+							<style>
+								.form-control {
+									background-color: rgba(0, 0, 0, 0.05) !important;
+								}
+							</style>
+
+
 							<div class="form-group">
 								<label class="form-label" style="color: ;">Name</label>
-								<input type="text" class="form-control rounded-left" placeholder="John Doe" name="name">
+								<input type="text" class="form-control rounded-left" placeholder="xyz" name="name">
 							</div>
 
 							@error('email')
-								<div class="alert alert-danger">{{ $message }}</div>
+							<div class="alert alert-danger">{{ $message }}</div>
 							@enderror
 
 							<div class="form-group">
 								<label class="form-label" style="color: ;">Email</label>
-								<input type="email" class="form-control rounded-left" placeholder="john@gmail.com" name="email" required>
+								<input type="email" class="form-control rounded-left" placeholder="xyz@gmail.com" name="email" required>
 							</div>
 
 							@error('password')
-								<div class="alert alert-danger">{{ $message }}</div>
+							<div class="alert alert-danger">{{ $message }}</div>
 							@enderror
 
 							<div class="form-group">
-							<label class="form-label">Password</label>
+								<label class="form-label">Password</label>
 								<input type="password" class="form-control rounded-left" placeholder="Enter Password" name="password" required>
 							</div>
 
-							
+
 							@error('role')
-								<div class="alert alert-danger">{{ $message }}</div>
+							<div class="alert alert-danger">{{ $message }}</div>
 							@enderror
 
 							<div class="form-group">
 								<label class="form-label" style="color: ;">Role</label>
-								<input type="text" class="form-control rounded-left" placeholder="Admin or any user" name="role">
+								<input type="text" class="form-control rounded-left" placeholder="admin / customer" name="role">
 							</div>
 
 							<div class="form-group">

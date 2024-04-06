@@ -7,8 +7,6 @@
 <!--start content-->
 <main class="page-content">
 
-
-
     <div class="d-flex">
         <div class="card border shadow-none w-100">
             <div class="card-body">
@@ -23,9 +21,7 @@
 
                     <form method="post" action="{{'/post_order'}}">
                         @csrf
-                        <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary">Order Products</button>
-                        </div>
+                       
                         <table id="" class="table table-striped table-bordered " style="width: 100%;table-layout:fixed;">
                             <thead>
                                 <tr>
@@ -50,12 +46,12 @@
 
                                     <td class=''> {{ $product->id }}
                                         <br>
-                                        <input class="w-25" name='product_ids[]' type="text" value="{{$product->id}}" disabled id="product_{{$product->id}}">
+                                        <input class="w-25 d-none" name='product_ids[]' type="text" value="{{$product->id}}" disabled id="product_{{$product->id}}">
                                     </td>
                                     <td> {{ $product->name }} </td>
                                     <td> {{ $product->price }}
                                         <br>
-                                        <input class="w-25" name='product_prices[]' type="text" value="{{$product->price}}" disabled id="product_price_{{$product->id}}">
+                                        <input class="w-25 d-none" name='product_prices[]' type="text" value="{{$product->price}}" disabled id="product_price_{{$product->id}}">
 
 
                                     </td>
@@ -74,13 +70,17 @@
                                             inpu.setAttribute('value', (parseInt(inpu.value) + 1));
                                         }
                                     </script>
+                                    <style>
+
+                                    </style>
                                     <td>
-                                        <span class=" btn-success p-3" style="font-size: 15px;" onclick="decrement(this)">dec</span>
-                                        <input id="product_qty_{{$product->id}}" name="quantities[]" type="number" style="width:50px" value="1" disabled>
-                                        <span class=" btn-success p-3" style="font-size: 15px" onclick="increment(this)">inc</span>
+                                       
+                                        <span class="btn btn-sm btn-dark" style="font-size: 15px; padding: 5px 10px" onclick="increment(this)"><i class="fas fa-plus"></i>
+                                        </span>
+                                        <input id="product_qty_{{$product->id}}" name="quantities[]" type="number" style="width:50px;text-align: right;" value="1" disabled>
+                                        <span class="btn btn-sm btn-dark" style="font-size: 15px;padding: 5px 10px" onclick="decrement(this)"><i class="fas fa-minus"></i>
+                                        </span>
                                     </td>
-
-
 
                                     <script>
                                         const enable_input = (product_id, tag) => {
@@ -113,8 +113,10 @@
 
                                     <td>
 
-                                        <span class="btn btn-warning add_cart_btn" onclick="enable_input({{$product->id}}, this)">ADD</span>
-                                        <span class="btn btn-danger rmv_cart_btn" onclick="disable_input({{$product->id}}, this)">REMOVE</span>
+                                        <span class="btn btn-primary add_cart_btn mb-1" onclick="enable_input({{$product->id}}, this)"><i class="fas fa-plus"></i>
+                                        </span>
+                                        <span class="btn btn-danger rmv_cart_btn mb-1" onclick="disable_input({{$product->id}}, this)"><i class="fas fa-times"></i>
+                                        </span>
 
                                     </td>
 
@@ -123,6 +125,10 @@
                             </tbody>
 
                         </table>
+
+                         <div class="text-center mt-3 mb-3">
+                            <button type="submit" class="btn btn-primary">Order Products</button>
+                        </div>
 
                     </form>
                 </div>
