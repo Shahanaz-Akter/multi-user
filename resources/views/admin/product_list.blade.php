@@ -23,6 +23,11 @@
                         </div>
                     @endif
 
+
+                    <div class="btn btn-primary mb-3">
+                    <a href="/add_product" style="color: white;">Add Product <i class="fas fa-plus"></i></a>
+                    </div>
+
                     
                     <table id="" class="table table-striped table-bordered " style="width: 100%;table-layout:fixed;">
                         <thead>
@@ -57,13 +62,8 @@
 
                               
                                 <td >
-                                    
-                                    <a class="btn btn-primary" href="{{ '/edit_product/'. $product->id }}">Edit</a>
-                                    
-                                  
-                                    <a class="btn btn-dark" href="{{ '/delete_product/'. $product->id }}">Delete</a>
-
-                                    
+                                    <a class="btn btn-primary" href="{{ '/edit_product/'. $product->id }}"><i class="fas fa-edit"></i></a>
+                                    <a class="btn btn-danger" href="{{ '/delete_product/'. $product->id }}"><i class="fas fa-trash"></i></a>
                                 </td>
 
                             </tr>

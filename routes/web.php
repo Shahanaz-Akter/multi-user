@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// for kogin and singup
+// for login and singup
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -32,15 +32,9 @@ Route::get('/login', function () {
 Route::post('/post_login', [UserController::class, 'postLogin']);
 
 
-
-
-
-// for admin
-
 // admin can access only admin routes
-// 
 Route::group(['middleware' => ['role:admin']], function () { //role=admin
-    // All Admin routes
+
     Route::get('/dashboard', function () {
         return view('layouts.dashboard');
     });
@@ -59,6 +53,7 @@ Route::group(['middleware' => ['role:admin']], function () { //role=admin
         return view('admin.order_list')->with('orders', $orders);
     });
     Route::get('/changeStatus/{required_status}/{order_id}', [OrderController::class, 'changeStatus']);
+    Route::get('/delete_order/{order_id}', [OrderController::class, 'deleteOrder']);
 });
 
 // for customer
@@ -69,6 +64,7 @@ Route::group(['middleware' => ['role:customer']], function () {
     });
     Route::post('/post_order', [OrderController::class, 'postOrder']);
     Route::get('/customer_order_history', [OrderController::class, 'getCustomerOrderHistory']);
+    Route::get('/delete_customer_order/{order_id}', [OrderController::class, 'customerDeleteOrder']);
 });
 
 

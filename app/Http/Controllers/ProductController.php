@@ -14,9 +14,9 @@ class ProductController extends Controller
         // dd($request->description);
         $request->validate([
             'name' => 'required|unique:products',
-            'price' => 'required',
-            'quantity' => 'required',
-            'description'=>'required'
+            'price' => 'required|numeric',
+            'quantity' => 'required|numeric',
+            
         ]);
         $product = Product::create([
             'name' => $request->name,
@@ -24,18 +24,20 @@ class ProductController extends Controller
             'quantity' => $request->quantity,
             'description' => $request->description,
         ]);
-        return redirect()->back()->with('success_msg','successfully product uploaded');
+        return redirect()->back()->with('success_msg','Successfully Ploaded Product!');
     }
+
     public function deleteProduct(Request $request, $product_id)
     {
         $productId = $product_id;
-        $product = Product::where('id',$productId)->first();
+        $product = Product::where('id',$productId)->first(); //only fetch this record $productId
          // Check if the product exists
         if ($product) {
             $product->delete();
-            return redirect()->back()->with('success_msg', 'Product deleted successfully.');
+            return redirect()->back()->with('success_msg', 'Product Deleted Successfully!');
         } 
     }
+
     public function editProduct(Request $request, $product_id){
         $product = Product::where('id',$product_id)->first();
         return view('admin.edit_product')->with('product', $product);
@@ -51,7 +53,7 @@ class ProductController extends Controller
         ]);
         
         if ($product) {
-            return redirect()->back()->with('success_msg', 'Product updated successfully.');
+            return redirect('/productlist');
         } 
     }
 }

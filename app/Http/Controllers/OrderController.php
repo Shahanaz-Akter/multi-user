@@ -20,10 +20,12 @@ class OrderController extends Controller
         //product id= [1,2]
         //quantities = [2,2]
         //prices = [100,200]
-
-
-        for ($i = 0; $i < sizeof($prices); $i++) {
-            $total_price = $total_price + ($prices[$i] * $quantities[$i]);
+        if (isset($prices) && isset($quantities) && count($prices) == count($quantities)) {
+            for ($i = 0; $i < sizeof($prices); $i++) {
+                $total_price = $total_price + ($prices[$i] * $quantities[$i]);
+            }
+        } else {
+            return redirect()->back()->with('error_msg', 'Please Select Products');
         }
 
         $order = Order::create([
@@ -48,5 +50,22 @@ class OrderController extends Controller
             'status' => $required_status
         ]);
         return redirect()->back();
+    }
+
+    public function deleteOrder(Request $re, $order_id)
+    {
+        $order =  Order::where('id',  $order_id)->first();
+        if ($order) {
+            $order->delete();
+            return redirect()->back();
+        }
+    }
+    public function customerDeleteOrder(Request $re, $order_id)
+    {
+        $order =  Order::where('id',  $order_id)->first();
+        if ($order) {
+            $order->delete();
+            return redirect()->back();
+        }
     }
 }

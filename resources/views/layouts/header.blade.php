@@ -16,7 +16,7 @@
         <div class="nav-item navbar-search-wrapper mb-0">
           <a class="nav-item nav-link search-toggler px-0" href="javascript:void(0);">
             <i class="bx bx-search-alt bx-sm"></i>
-            <span class="d-none d-md-inline-block text-muted">Search (Ctrl+/)</span>
+            <span class="d-none d-md-inline-block text-muted">Search(Ctrl+/)</span>
           </a>
         </div>
       </div>
@@ -38,23 +38,12 @@
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="javascript:void(0);" data-language="fr">
+              <a class="dropdown-item" href="#" data-language="bn">
                 <i class="fi fi-fr fis rounded-circle fs-4 me-1"></i>
-                <span class="align-middle">French</span>
+                <span class="align-middle">Bangla</span>
               </a>
             </li>
-            <li>
-              <a class="dropdown-item" href="javascript:void(0);" data-language="de">
-                <i class="fi fi-de fis rounded-circle fs-4 me-1"></i>
-                <span class="align-middle">German</span>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="javascript:void(0);" data-language="pt">
-                <i class="fi fi-pt fis rounded-circle fs-4 me-1"></i>
-                <span class="align-middle">Portuguese</span>
-              </a>
-            </li>
+          
           </ul>
         </li>
         <!--/ Language -->
@@ -71,7 +60,7 @@
         <!--/ Style Switcher -->
 
         <!-- Quick links  -->
-        <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
+        <li class="d-none nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
           <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
             <i class='bx bx-grid-alt bx-sm'></i>
           </a>
@@ -153,7 +142,7 @@
         <!-- Quick links -->
 
         <!-- Notification -->
-        <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
+        <li class="d-none nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
           <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
             <i class="bx bx-bell bx-sm"></i>
             <span class="badge bg-danger rounded-pill badge-notifications">5</span>

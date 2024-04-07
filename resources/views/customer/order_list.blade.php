@@ -11,6 +11,7 @@
         <div class="card border shadow-none w-100">
             <div class="card-body">
                 <div class="responsive-table">
+                <div class="text-center bg-light mb-2 fw-bold p-4">Customer Ordered Product</div>
 
 
                     @if(session('success_msg'))
@@ -30,7 +31,7 @@
                                 <th>Price</th>
                                 <th>Products</th>
                                 <th>Status</th>
-                                <th>Action</th>
+                                <th class="d-none">Action</th>
 
                             </tr>
                         </thead>
@@ -71,9 +72,8 @@
                                 <td>
                                     <span class="btn btn-success add_cart_btn">{{$order->status}}</span>
                                 </td>
-                                <td>
-                                   <a href="/edit_order/{{$order->id}}"><span class="btn btn-primary add_cart_btn"><i class="fas fa-pencil-alt"></i></span></a> 
-                                   <a href="/delete_order/{{$order->id}}"><span class="btn btn-danger add_cart_btn"><i class="fas fa-trash"></i></span></a> 
+                                <td class="d-none">
+                                   <a href="/delete_customer_order/{{$order->id}}"><span class="btn btn-danger add_cart_btn"><i class="fas fa-trash"></i></span></a> 
                                 </td>
 
                             </tr>

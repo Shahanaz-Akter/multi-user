@@ -239,21 +239,25 @@
           @yield('content')
           <!-- / Content -->
           <!-- / footer -->
-          <!-- There will be placed footer tag -->
+       
           <!-- / Footer -->
 
           <div class="content-backdrop fade"></div>
+          
         </div>
         <!-- Content wrap1er -->
-
+       
       </div>
+
       <!-- / Layout page -->
     </div>
     <!-- Overlay -->
     <div class="layout-overlay layout-menu-toggle"></div>
     <!-- Drag Target Area To SlideIn Menu On Small Screens -->
     <div class="drag-target"></div>
+
   </div>
+
 
   <!-- / Layout wrap1er -->
   <!-- buy now content with link -->
