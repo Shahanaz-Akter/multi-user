@@ -9,7 +9,7 @@
         <li class="menu-item">
             <a href="{{url('/dashboard')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Dashboard">Dashboard</div>
+                <div >Dashboard</div>
             </a>
         </li>
 

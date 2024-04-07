@@ -31,9 +31,8 @@
                     
                     <table id="" class="table table-striped table-bordered " style="width: 100%;table-layout:fixed;">
                         <thead>
-                            <tr>
-
-                                <th>Product ID</th>
+                            <tr class="">
+                                <th>Product Id</th>
                                 <th>Name</th>                            
                                 <th>Price</th>
                                 <th>Description</th>  

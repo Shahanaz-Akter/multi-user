@@ -20,7 +20,7 @@
             <div class="">
                 <div class="card shadow-none  border">
                     <div class="card-body">
-                    <div class="text-center bg-light mb-2 fw-bold p-4">Upload Product</div>
+                    <div class="text-center bg-light mb-2 fw-bold p-4 text-primary">Upload Product <i class="fas fa-plus"></i></div>
 
 
                         @if(session('success_msg'))

@@ -34,12 +34,12 @@
 				<div class="col-md-6 col-lg-5">
 					<div class="login-wrap p-4 p-md-5">
 
-                    <div class="text-center mb-1">Are You Already registered? <a href="/signup"><b>Signup</b></a></div>
+                    <div class="text-center mb-1">Are You Already Registered? <a href="/signup"><b>Signup</b></a></div>
 
 						<div class="icon d-flex align-items-center justify-content-center">
 							<span class="fa fa-user-o"></span>
 						</div>
-						<h3 class="text-center mb-4" style="color: green;">Login To Continue</h3>
+						<h3 class="text-center mb-4" style="color: black;">Login To Continue</h3>
 						<form action="{{url('/post_login')}}" class="login-form" method="post">
 							@csrf
 							<div class="form-group">
@@ -51,7 +51,7 @@
 							</div>
 							<div class="form-group d-md-flex">
 								<div class="w-50">
-									<label class="checkbox-wrap checkbox-primary" style="color: green;">Remember Me
+									<label class="checkbox-wrap checkbox-primary" style="color: black;">Remember Me
 										<input type="checkbox" name="remember_me">
 										<span class="checkmark"></span>
 									</label>

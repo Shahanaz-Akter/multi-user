@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+
+// Route::get('/', function () {
+//     return view('chart');
+// });
+
 // for login and singup
 Route::get('/', function () {
     return view('auth.login');

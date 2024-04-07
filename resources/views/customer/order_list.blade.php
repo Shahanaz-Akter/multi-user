@@ -11,7 +11,11 @@
         <div class="card border shadow-none w-100">
             <div class="card-body">
                 <div class="responsive-table">
-                <div class="text-center bg-light mb-2 fw-bold p-4">Customer Ordered Product</div>
+                    <div class="text-center bg-light mb-2 fw-bold p-4 text-primary"">Customer Ordered Product <a class="ms-2" href="/customer_productlist">
+                            <i class="fas fa-arrow-right text-dark"></i>
+
+                        </a>
+                    </div>
 
 
                     @if(session('success_msg'))
@@ -73,7 +77,7 @@
                                     <span class="btn btn-success add_cart_btn">{{$order->status}}</span>
                                 </td>
                                 <td class="d-none">
-                                   <a href="/delete_customer_order/{{$order->id}}"><span class="btn btn-danger add_cart_btn"><i class="fas fa-trash"></i></span></a> 
+                                    <a href="/delete_customer_order/{{$order->id}}"><span class="btn btn-danger add_cart_btn"><i class="fas fa-trash"></i></span></a>
                                 </td>
 
                             </tr>

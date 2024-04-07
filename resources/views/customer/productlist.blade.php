@@ -12,7 +12,7 @@
             <div class="card-body">
                 <div class="responsive-table">
 
-                    <div class="text-center bg-light mb-2 fw-bold p-4">All Product List</div>
+                    <div class="text-center bg-light mb-2 fw-bold p-4 text-primary"">Add Product from All Product List</div>
 
                     @if(session('success_msg'))
                     <div class="alert alert-success">

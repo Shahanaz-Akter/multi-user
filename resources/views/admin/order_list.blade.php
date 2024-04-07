@@ -61,7 +61,7 @@
                                     $product = App\Models\Product::where('id', $productID)->first();
                                     @endphp
                                     <b>Name: </b>
-                                    {{$product->name}} - <b>QTY: </b>{{$productQTYArr[$index]}}
+                                    {{$product->name}}, <b>QTY: </b>{{$productQTYArr[$index]}}
                                     <br>
                                     @endforeach
                                 </td>
@@ -74,11 +74,11 @@
 
 
                                 <td>
-                                    <a class="btn btn-sm btn-warning mb-1" href="{{'/changeStatus/pending/'.$order->id}}">Pending<i class="ms-2 fas fa-exclamation-triangle"></i></a>
+                                    <a class="btn btn-sm btn-warning mb-2" href="{{'/changeStatus/pending/'.$order->id}}">Pending</a>
 
-                                    <a class="btn btn-sm btn-success  mb-1" href="{{'/changeStatus/processing/'.$order->id}}">Processing <i class="fas fa-spinner "></i></a>
+                                    <a class="btn btn-sm btn-success  mb-2" href="{{'/changeStatus/processing/'.$order->id}}">Processing</a>
 
-                                    <a class="btn btn-sm btn-primary  mb-1" href="{{'/changeStatus/completed/'.$order->id}}">Completed <i class="fas fa-check-circle"></i></a>
+                                    <a class="btn btn-sm btn-primary  mb-2" href="{{'/changeStatus/completed/'.$order->id}}">Completed</a>
                                 </td>
                                 <td>
                                     <a class="btn btn-danger" href="{{ '/delete_order/'. $order->id }}"><i class="fas fa-trash"></i></a>

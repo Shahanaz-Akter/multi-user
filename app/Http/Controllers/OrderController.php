@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\customerReport;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -35,6 +37,65 @@ class OrderController extends Controller
             'quantities' => json_encode($quantities),
             'status' => 'pending'
         ]);
+
+        $currentMonth = Carbon::now()->format('F');
+        $currentYear = Carbon::now()->year;
+
+        $existingReport = customerReport::where(['user_id' => $customer_id,  'month' => $currentMonth, 'year' => $currentYear])->first();
+
+        // Zip the arrays together into an associative array
+        $combined = array_combine($product_ids, $quantities);
+
+        $max_quantity = 0;
+        $max_product_id = null;
+
+        // Iterate through the combined array to find the maximum quantity and its corresponding product ID
+        foreach ($combined as $product_id => $quantity) {
+            if ($quantity > $max_quantity) {
+                $max_quantity = $quantity;
+                $max_product_id = $product_id;
+            }
+        }
+
+        // dd([
+        //     'id' => $product_ids,
+        //     'qty' => $quantities,
+        //     'combined' => $combined,
+        //     'max_quantity' =>    $max_quantity,
+        //     'max_product_id' => $max_product_id,
+
+        // ]);
+
+        // $max_product_id now contains the product ID with the highest quantity
+
+
+        if ($existingReport) {
+
+            if ($max_quantity > $existingReport->most_buyed_product_quantity) {
+
+                $customerReport = $existingReport->update([
+                    'most_buyed_product_id' =>  $max_product_id,
+                    'most_buyed_product_quantity' => $max_quantity,
+                    'monthly_total_buyed_price' => ($existingReport->monthly_total_buyed_price + $order->total_price),
+                ]);
+            } else {
+                $customerReport = $existingReport->update([
+                    'monthly_total_buyed_price' => ($existingReport->monthly_total_buyed_price + $order->total_price),
+                ]);
+            }
+        } else {
+            // create
+            $customerReport = customerReport::create([
+                'user_id' => $customer_id,
+                'most_buyed_product_id' => $max_product_id,
+                'most_buyed_product_quantity' =>  $max_quantity,
+                'monthly_total_buyed_price' => $order->total_price,
+                'month' => $currentMonth,
+                'year' => $currentYear,
+            ]);
+        }
+
+        // $max_quantity,$max_product_id,
 
         return redirect('/customer_order_history');
     }
